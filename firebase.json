@@ -1,11 +1,14 @@
 {
   "hosting": {
     "site": "jemmia-app-html",
-    "public": "/",
+    "public": ".",
     "ignore": [
       "firebase.json",
       "**/.*",
-      "**/node_modules/**"
+      "**/node_modules/**",
+      "**/.git/**",
+      "**/scss/**",
+      "**/request.json"
     ],
     "rewrites": [
       {
