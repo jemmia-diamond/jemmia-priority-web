@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta charset="UTF-8" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-S7Q7M2B9DJ"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-S7Q7M2B9DJ");
+    </script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Specific Metas -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, viewport-fit=cover"
+    />
+    <title>Jemmia Priority - History</title>
+    <!-- Favicon and Touch Icons  -->
+    <link rel="shortcut icon" href="images/logo.png" />
+    <link rel="apple-touch-icon-precomposed" href="images/logo.png" />
+    <!-- Font -->
+    <link rel="stylesheet" href="fonts/fonts.css" />
+    <!-- Icons -->
+    <link rel="stylesheet" href="fonts/icons-alipay.css" />
+    <link rel="stylesheet" href="styles/bootstrap.css" />
+    <link rel="stylesheet" href="styles/swiper-bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="styles/styles.css" />
+    <link
+      rel="manifest"
+      href="_manifest.json"
+      data-pwa-version="set_in_manifest_and_pwa_js"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="192x192"
+      href="app/icon/icon-192x192.jpg"
+    />
+  </head>
+
+  <body class="bg_surface_color">
+    <!-- preloade -->
+
+    <!-- /preload -->
+    <div class="header is-fixed">
+      <div class="tf-container">
+        <div
+          class="tf-statusbar d-flex justify-content-center align-items-center"
+        >
+          <a style="outline: none" href="#" class="back-btn">
+            <i class="icon-left"></i>
+          </a>
+          <h3>Lịch sử</h3>
+          <!-- <a href="#" id="btn-popup-up" class="action-right"><i class="icon icon-filter"></i> </a> -->
+        </div>
+      </div>
+    </div>
+    <div class="" style="padding-bottom: 100px">
+      <div class="panel-box panel-up panel-noti">
+        <div id="app-wrap" class="style1">
+          <div class="tf-container">
+            <div class="tf-tab mt-3">
+              <div class="swiper-container tes-noti">
+                <ul class="swiper-wrapper menu-tabs">
+                  <li class="swiper-slide nav-tab active">
+                    <a style="outline: none" href="#">Tất cả</a>
+                  </li>
+                  <li class="swiper-slide nav-tab">
+                    <a
+                      style="outline: none"
+                      href="#"
+                      onclick="getNotifyRefferrals()"
+                      >Giới thiệu</a
+                    >
+                  </li>
+                  <li class="swiper-slide nav-tab">
+                    <a
+                      style="outline: none"
+                      href="#"
+                      onclick="getNotifyCashBack()"
+                      >Đổi thưởng</a
+                    >
+                  </li>
+                  <li class="swiper-slide nav-tab">
+                    <a
+                      style="outline: none"
+                      href="#"
+                      onclick="getNotifyCoupon()"
+                      >Mã giảm giá</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="content-tab mt-5">
+                <!-- All -->
+                <div>
+                  <div class="noti-box" id="all"></div>
+                  <h5
+                    id="more_all"
+                    class="text-center"
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                    "
+                  >
+                    <p onclick="getNotifyAll()" id="getAll">Xem Thêm</p>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill="none"
+                        stroke="#003a40"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="m7 10l5 5m0 0l5-5"
+                      />
+                    </svg>
+                  </h5>
+                </div>
+                <!-- Refferrals -->
+                <div>
+                  <div class="noti-box" id="refferrals">
+                    <!-- <div class="noti-box">
+                      <div class="noti-list">
+                        <div class="icon-box" >
+                          <img src="/images/ref/initial.png" alt="" style="width: 20px; height: 20px; object-fit: cover">
+                        </div>
+                        <div class="content-right">
+                          <div class="title"></div>
+                          <div class="desc"></div>
+                        </div>
+
+                      </div>
+                    </div> -->
+                  </div>
+                  <h5
+                    id="more_ref"
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                    "
+                  >
+                    <p onclick="getNotifyRefferrals()" id="getRefferals">
+                      Xem Thêm
+                    </p>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill="none"
+                        stroke="#003a40"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="m7 10l5 5m0 0l5-5"
+                      />
+                    </svg>
+                  </h5>
+                </div>
+                <!-- Cash Back -->
+                <div>
+                  <div class="noti-box" id="cashback"></div>
+                  <h5
+                    id="more_cash"
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                    "
+                  >
+                    <p onclick="getNotifyCashBack()" id="getCashback">
+                      Xem Thêm
+                    </p>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill="none"
+                        stroke="#003a40"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="m7 10l5 5m0 0l5-5"
+                      />
+                    </svg>
+                  </h5>
+                </div>
+                <!-- Coupon -->
+                <div>
+                  <div class="noti-box" id="coupon"></div>
+                  <h5
+                    id="more_coupon"
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                    "
+                  >
+                    <p onclick="getNotifyCoupon()" id="getCoupon">Xem Thêm</p>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill="none"
+                        stroke="#003a40"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="m7 10l5 5m0 0l5-5"
+                      />
+                    </svg>
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-navigation-bar">
+      <div class="tf-container">
+        <ul class="tf-navigation-bar">
+          <li>
+            <a
+              style="outline: none"
+              class="fw_4 d-flex justify-content-center align-items-center flex-column"
+              href="/"
+              ><i class="icon-home"></i> Trang chủ</a
+            >
+          </li>
+          <li class="active">
+            <a
+              style="outline: none"
+              class="fw_6 d-flex justify-content-center align-items-center flex-column"
+              href="58_history.html"
+            >
+              <i class="icon-history"></i>Lịch sử GD</a
+            >
+          </li>
+          <li>
+            <a
+              style="outline: none"
+              class="fw_4 d-flex justify-content-center align-items-center flex-column"
+              href="#tel:02873026066"
+            >
+              <img
+                class="border p-2 rounded-circle text-center object-fit-cover"
+                style="
+                  background: #003a40;
+                  width: 42px;
+                  height: 42px;
+                  object-fit: cover;
+                "
+                src="./images/call.svg"
+                alt="tel:02873026066"
+              />
+            </a>
+          </li>
+          <li>
+            <a
+              style="outline: none"
+              class="fw_4 d-flex justify-content-center align-items-center flex-column"
+              href="62_rewards.html"
+            >
+              <svg
+                width="25"
+                height="24"
+                viewBox="0 0 25 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="12.25" cy="12" r="9.5" stroke="#717171" />
+                <path
+                  d="M17.033 11.5318C17.2298 11.3316 17.2993 11.0377 17.2144 10.7646C17.1293 10.4914 16.9076 10.2964 16.6353 10.255L14.214 9.88781C14.1109 9.87213 14.0218 9.80462 13.9758 9.70702L12.8933 7.41717C12.7717 7.15989 12.525 7 12.2501 7C11.9754 7 11.7287 7.15989 11.6071 7.41717L10.5244 9.70723C10.4784 9.80483 10.3891 9.87234 10.286 9.88802L7.86469 10.2552C7.59257 10.2964 7.3707 10.4916 7.2856 10.7648C7.2007 11.038 7.27018 11.3318 7.46702 11.532L9.2189 13.3144C9.29359 13.3905 9.32783 13.5 9.31021 13.607L8.89692 16.1239C8.86027 16.3454 8.91594 16.5609 9.0533 16.7308C9.26676 16.9956 9.6394 17.0763 9.93735 16.9128L12.1027 15.7244C12.1932 15.6749 12.3072 15.6753 12.3975 15.7244L14.563 16.9128C14.6684 16.9707 14.7807 17 14.8966 17C15.1083 17 15.3089 16.9018 15.4469 16.7308C15.5845 16.5609 15.6399 16.345 15.6033 16.1239L15.1898 13.607C15.1722 13.4998 15.2064 13.3905 15.2811 13.3144L17.033 11.5318Z"
+                  stroke="#717171"
+                  stroke-width="1.25"
+                />
+              </svg>
+              Điểm thưởng</a
+            >
+          </li>
+          <li>
+            <a
+              style="outline: none"
+              class="fw_4 d-flex justify-content-center align-items-center flex-column"
+              href="69_profile.html"
+            >
+              <i class="icon-user-outline"></i> Cá nhân</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tf-panel up">
+      <div class="panel-box panel-up panel-filter-history">
+        <div class="header mb-1 is-fixed">
+          <div class="tf-container">
+            <div
+              class="tf-statusbar d-flex justify-content-center align-items-center"
+            >
+              <a href="#" class="clear-panel"> <i class="icon-left"></i> </a>
+              <h3>Filter</h3>
+            </div>
+          </div>
+        </div>
+        <div id="app-wrap" class="style1">
+          <div class="mt-6">
+            <div class="tf-container">
+              <h4 class="mt-3 mb-3">Monthly</h4>
+              <ul class="filter-history">
+                <li><a href="#" class="tf-btn large active">All</a></li>
+                <li><a href="#" class="tf-btn large">Jan</a></li>
+                <li><a href="#" class="tf-btn large">Feb</a></li>
+                <li><a href="#" class="tf-btn large">Mar</a></li>
+                <li><a href="#" class="tf-btn large">Apr</a></li>
+                <li><a href="#" class="tf-btn large">May</a></li>
+                <li><a href="#" class="tf-btn large">Jun</a></li>
+                <li><a href="#" class="tf-btn large">July</a></li>
+                <li><a href="#" class="tf-btn large">Aug</a></li>
+                <li><a href="#" class="tf-btn large">Sep</a></li>
+                <li><a href="#" class="tf-btn large">Oct</a></li>
+                <li><a href="#" class="tf-btn large">Nov</a></li>
+                <li><a href="#" class="tf-btn large">Dec</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="mt-1">
+            <div class="container">
+              <h4 class="mt-3 mb-3">Status</h4>
+              <ul class="filter-history status">
+                <li><a href="#" class="tf-btn large active">All</a></li>
+                <li><a href="#" class="tf-btn large">Successful</a></li>
+                <li><a href="#" class="tf-btn large">Processing</a></li>
+                <li><a href="#" class="tf-btn large">Failure</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="box-btn">
+            <div class="tf-container">
+              <a href="61_filter-research.html" class="tf-btn accent large"
+                >Apply</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="javascript/jquery.min.js"></script>
+    <script type="text/javascript" src="javascript/bootstrap.min.js"></script>
+    <script
+      type="text/javascript"
+      src="javascript/swiper-bundle.min.js"
+    ></script>
+    <script type="text/javascript" src="javascript/swiper.js"></script>
+    <script type="text/javascript" src="javascript/main.js"></script>
+
+    <script>
+      const user_id = JSON.parse(localStorage.getItem("user"));
+      const tokens = JSON.parse(localStorage.getItem("accessToken"));
+      if (!user_id || !tokens) {
+        window.location.assign("/04_login.html");
+      }
+    </script>
+    <script>
+      const calculateTime = (time) => {
+        const diff = (Date.now() - time) / 1000;
+
+        if (diff < 0) {
+          return "Vừa xong";
+        }
+
+        if (diff < 60) {
+          return `${diff.toFixed(0)} giây`;
+        }
+
+        if (diff < 3600) {
+          return `${Math.floor(diff / 60).toFixed(0)} phút`;
+        }
+
+        if (diff < 86400) {
+          return `${Math.floor(diff / 3600).toFixed(0)} giờ`;
+        }
+
+        if (diff < 604800) {
+          return `${Math.floor(diff / 86400).toFixed(0)} ngày`;
+        }
+
+        if (diff < 2592000) {
+          return `${Math.floor(diff / 604800).toFixed(0)} tuần`;
+        }
+
+        if (diff < 31536000) {
+          return `${Math.floor(diff / 2592000).toFixed(0)} tháng`;
+        }
+
+        return `${Math.floor(diff / 31536000).toFixed(0)} năm`;
+      };
+      const token = JSON.parse(localStorage.getItem("accessToken"));
+      const headers = {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + token,
+        },
+        // body: JSON.stringify(payload),
+      };
+
+      function setSeen(id) {
+        const checkSeen = fetch(
+          `https://priority-api.jemmia.vn/notification/${id}`,
+          headers
+        );
+      }
+      var count_all = 0;
+      const divMoreBox = document.getElementById("more_all");
+      async function getNotifyAll() {
+        const container = document.getElementById("all");
+
+        count_all = count_all + 1;
+        const load = fetch(
+          `https://priority-api.jemmia.vn/notification?page=${count_all}&size=10`,
+          headers
+        ).then((event) =>
+          event.json().then((items) => {
+            if (items.items.length == 0) {
+              divMoreBox.style.display = "none";
+            }
+            items.items.map((item, index) => {
+              const divNotiBox = document.createElement("div");
+
+              divNotiBox.classList.add("noti-box");
+
+              const divNotiList = document.createElement("div");
+              divNotiList.classList.add("noti-list");
+
+              const divIconBox = document.createElement("div");
+              divIconBox.classList.add("icon-box", "bg_service-4");
+
+              const svg = document.createElement("img");
+              svg.src = `/images/ref/${
+                item.type == "ref"
+                  ? "Referral.svg"
+                  : item.type == "cashback"
+                  ? "Cashback.svg"
+                  : item.type == "coupon"
+                  ? "Layer_1.svg"
+                  : ""
+              }`;
+              svg.style.width = "20px";
+              svg.style.height = "20px";
+              svg.style.objectFit = "cover";
+              // Thêm các phần tử vào cấu trúc cây HTML
+              divIconBox.appendChild(svg);
+              divNotiList.appendChild(divIconBox);
+              divNotiBox.appendChild(divNotiList);
+
+              // Gán nội dung cho các phần tử
+              const title = document.createElement("h3");
+              title.classList.add("fw_6");
+              title.textContent = item.title;
+
+              const time = document.createElement("span");
+              var dateString = item?.createdDate;
+              var date = new Date(dateString);
+              var minutes = date.getMinutes();
+              var hours = date.getHours();
+              var day = date.getDate();
+              var month = date.getMonth() + 1; // Ghi chú: Tháng bắt đầu từ 0, nên cần cộng 1
+              var year = date.getFullYear();
+
+              time.classList.add("fw_6", "on_surface_color");
+              time.textContent = `${calculateTime(
+                new Date(item.createdDate).getTime()
+              )} trước`;
+
+              const titleContainer = document.createElement("div");
+              titleContainer.classList.add("title");
+              titleContainer.appendChild(title);
+              titleContainer.appendChild(time);
+
+              const description = document.createElement("p");
+              description.classList.add("on_surface_color", "fw_4");
+              description.innerHTML = item.description;
+
+              const dot = document.createElement("i");
+              if (item.isSeen == false) {
+                dot.classList.add("dot");
+              }
+
+              const descContainer = document.createElement("div");
+              descContainer.classList.add("desc");
+              descContainer.appendChild(description);
+              descContainer.appendChild(dot);
+
+              const contentRight = document.createElement("div");
+              contentRight.classList.add("content-right");
+              contentRight.appendChild(titleContainer);
+              contentRight.appendChild(descContainer);
+
+              divNotiList.appendChild(contentRight);
+
+              divNotiBox.addEventListener("click", () => {
+                setSeen(item.id);
+                dot.classList.remove("dot");
+              });
+              // Thêm đoạn mã HTML vào vị trí mong muốn trong trang web
+              // Thay 'container' bằng id của phần tử cha mong muốn
+
+              container.appendChild(divNotiBox);
+            });
+          })
+        );
+        // Tạo các phần tử HTML
+      }
+
+      divMoreBox.addEventListener("click", () => {
+        // i = i + 1;
+        getNotifyAll();
+      });
+      getNotifyAll();
+
+      // get Refferrals
+      var count_ref = 0;
+      const divMoreRef = document.getElementById("more_ref");
+      async function getNotifyRefferrals() {
+        const container = document.getElementById("refferrals");
+
+        count_ref = count_ref + 1;
+        const load = fetch(
+          `https://priority-api.jemmia.vn/notification?page=${count_ref}&size=10&type=ref`,
+          headers
+        ).then((event) =>
+          event.json().then((items) => {
+            if (count_ref >= items.meta.totalPages) {
+              divMoreRef.style.display = "none";
+            }
+            items.items.map((item, index) => {
+              const divNotiBox = document.createElement("div");
+              divNotiBox.classList.add("noti-box");
+
+              const divNotiList = document.createElement("div");
+              divNotiList.classList.add("noti-list");
+
+              const divIconBox = document.createElement("div");
+              divIconBox.classList.add("icon-box", "bg_service-4");
+
+              const svg = document.createElement("img");
+              svg.src = "/images/ref/Referral.svg";
+              svg.style.width = "20px";
+              svg.style.height = "20px";
+              svg.style.objectFit = "cover";
+
+              // Thêm các phần tử vào cấu trúc cây HTML
+              divIconBox.appendChild(svg);
+              divNotiList.appendChild(divIconBox);
+              divNotiBox.appendChild(divNotiList);
+
+              // Gán nội dung cho các phần tử
+              const title = document.createElement("h3");
+              title.classList.add("fw_6");
+              title.textContent = item.title;
+
+              const time = document.createElement("span");
+              var dateString = item?.createdDate;
+              var date = new Date(dateString);
+              var minutes = date.getMinutes();
+              var hours = date.getHours();
+              var day = date.getDate();
+              var month = date.getMonth() + 1; // Ghi chú: Tháng bắt đầu từ 0, nên cần cộng 1
+              var year = date.getFullYear();
+
+              //
+              function timeSince(date) {
+                var seconds = Math.floor((new Date() - date) / 1000);
+
+                var interval = seconds / 31536000;
+
+                if (interval > 1) {
+                  return Math.floor(interval) + " years";
+                }
+                interval = seconds / 2592000;
+                if (interval > 1) {
+                  return Math.floor(interval) + " months";
+                }
+                interval = seconds / 86400;
+                if (interval > 1) {
+                  return Math.floor(interval) + " days";
+                }
+                interval = seconds / 3600;
+                if (interval > 1) {
+                  return Math.floor(interval) + " hours";
+                }
+                interval = seconds / 60;
+                if (interval > 1) {
+                  return Math.floor(interval) + " minutes";
+                }
+                return Math.floor(seconds) + " seconds";
+              }
+
+              var aDay = 24 * 60 * 60 * 1000;
+              //
+              // var formattedDate = `${day < 10 ? `0${day}` : day}.${
+              //   month < 10 ? `0${month}` : month
+              // }.${year}`;
+              time.classList.add("fw_6", "on_surface_color");
+              time.textContent = `${calculateTime(
+                new Date(item.createdDate).getTime()
+              )} trước`;
+
+              const titleContainer = document.createElement("div");
+              titleContainer.classList.add("title");
+              titleContainer.appendChild(title);
+              titleContainer.appendChild(time);
+
+              const description = document.createElement("p");
+              description.classList.add("on_surface_color", "fw_4");
+              description.innerHTML = item.description;
+
+              const dot = document.createElement("i");
+              if (item.isSeen == false) {
+                dot.classList.add("dot");
+              }
+
+              const descContainer = document.createElement("div");
+              descContainer.classList.add("desc");
+              descContainer.appendChild(description);
+              descContainer.appendChild(dot);
+
+              const contentRight = document.createElement("div");
+              contentRight.classList.add("content-right");
+              contentRight.appendChild(titleContainer);
+              contentRight.appendChild(descContainer);
+
+              divNotiList.appendChild(contentRight);
+
+              divNotiBox.addEventListener("click", () => {
+                setSeen(item.id);
+                dot.classList.remove("dot");
+              });
+              // Thêm đoạn mã HTML vào vị trí mong muốn trong trang web
+              // const container = document.getElementById("refferrals"); // Thay 'container' bằng id của phần tử cha mong muốn
+              container.appendChild(divNotiBox);
+            });
+          })
+        );
+        // Tạo các phần tử HTML
+      }
+      divMoreRef.addEventListener("click", () => {
+        // i = i + 1;
+        getNotifyRefferrals();
+      });
+
+      // get Cash Back
+      var count_cash = 0;
+      const divMoreCash = document.getElementById("more_cash");
+      async function getNotifyCashBack() {
+        const container = document.getElementById("cashback");
+
+        count_cash = count_cash + 1;
+        const load = fetch(
+          `https://priority-api.jemmia.vn/notification?page=${count_cash}&size=10&type=cashback`,
+          headers
+        ).then((event) =>
+          event.json().then((items) => {
+            if (count_cash >= items.meta.totalPages) {
+              divMoreCash.style.display = "none";
+            }
+
+            items.items.map((item, index) => {
+              const divNotiBox = document.createElement("div");
+              divNotiBox.classList.add("noti-box");
+
+              const divNotiList = document.createElement("div");
+              divNotiList.classList.add("noti-list");
+
+              const divIconBox = document.createElement("div");
+              divIconBox.classList.add("icon-box", "bg_service-4");
+
+              const svg = document.createElement("img");
+              svg.src = "/images/ref/Cashback.svg";
+              svg.style.width = "20px";
+              svg.style.height = "20px";
+              svg.style.objectFit = "cover";
+
+              // Thêm các phần tử vào cấu trúc cây HTML
+              divIconBox.appendChild(svg);
+              divNotiList.appendChild(divIconBox);
+              divNotiBox.appendChild(divNotiList);
+
+              // Gán nội dung cho các phần tử
+              const title = document.createElement("h3");
+              title.classList.add("fw_6");
+              title.textContent = item.title;
+
+              const time = document.createElement("span");
+              var dateString = item?.createdDate;
+              var date = new Date(dateString);
+              var minutes = date.getMinutes();
+              var hours = date.getHours();
+              var day = date.getDate();
+              var month = date.getMonth() + 1; // Ghi chú: Tháng bắt đầu từ 0, nên cần cộng 1
+              var year = date.getFullYear();
+
+              //
+              function timeSince(date) {
+                var seconds = Math.floor((new Date() - date) / 1000);
+
+                var interval = seconds / 31536000;
+
+                if (interval > 1) {
+                  return Math.floor(interval) + " years";
+                }
+                interval = seconds / 2592000;
+                if (interval > 1) {
+                  return Math.floor(interval) + " months";
+                }
+                interval = seconds / 86400;
+                if (interval > 1) {
+                  return Math.floor(interval) + " days";
+                }
+                interval = seconds / 3600;
+                if (interval > 1) {
+                  return Math.floor(interval) + " hours";
+                }
+                interval = seconds / 60;
+                if (interval > 1) {
+                  return Math.floor(interval) + " minutes";
+                }
+                return Math.floor(seconds) + " seconds";
+              }
+
+              var aDay = 24 * 60 * 60 * 1000;
+              //
+              // var formattedDate = `${day < 10 ? `0${day}` : day}.${
+              //   month < 10 ? `0${month}` : month
+              // }.${year}`;
+              time.classList.add("fw_6", "on_surface_color");
+              time.textContent = `${calculateTime(
+                new Date(item.createdDate).getTime()
+              )} trước`;
+
+              const titleContainer = document.createElement("div");
+              titleContainer.classList.add("title");
+              titleContainer.appendChild(title);
+              titleContainer.appendChild(time);
+
+              const description = document.createElement("p");
+              description.classList.add("on_surface_color", "fw_4");
+              description.innerHTML = item.description;
+
+              const dot = document.createElement("i");
+              if (item.isSeen == false) {
+                dot.classList.add("dot");
+              }
+
+              const descContainer = document.createElement("div");
+              descContainer.classList.add("desc");
+              descContainer.appendChild(description);
+              descContainer.appendChild(dot);
+
+              const contentRight = document.createElement("div");
+              contentRight.classList.add("content-right");
+              contentRight.appendChild(titleContainer);
+              contentRight.appendChild(descContainer);
+
+              divNotiList.appendChild(contentRight);
+
+              divNotiBox.addEventListener("click", () => {
+                setSeen(item.id);
+                dot.classList.remove("dot");
+              });
+              // Thêm đoạn mã HTML vào vị trí mong muốn trong trang web
+              // const container = document.getElementById("cashback"); // Thay 'container' bằng id của phần tử cha mong muốn
+              container.appendChild(divNotiBox);
+            });
+          })
+        );
+        // Tạo các phần tử HTML
+      }
+      divMoreCash.addEventListener("click", () => {
+        // i = i + 1;
+        getNotifyCashBack();
+      });
+
+      // get Refferrals
+      var count_coupon = 0;
+      const divMoreCoupon = document.getElementById("more_coupon");
+      async function getNotifyCoupon() {
+        let count_coupon = 0;
+        const container = document.getElementById("coupon");
+
+        count_coupon = count_coupon + 1;
+        const load = fetch(
+          `https://priority-api.jemmia.vn/notification?page=${count_coupon}&size=10&type=coupon`,
+          headers
+        ).then((event) =>
+          event.json().then((items) => {
+            console.log(items);
+            if (count_coupon >= items.meta.totalPages) {
+              divMoreCoupon.style.display = "none";
+            }
+            items.items.map((item, index) => {
+              const divNotiBox = document.createElement("div");
+              divNotiBox.classList.add("noti-box");
+
+              const divNotiList = document.createElement("div");
+              divNotiList.classList.add("noti-list");
+
+              const divIconBox = document.createElement("div");
+              divIconBox.classList.add("icon-box", "bg_service-4");
+
+              const svg = document.createElement("img");
+              svg.src = "/images/ref/Layer_1.svg";
+              svg.style.width = "20px";
+              svg.style.height = "20px";
+              svg.style.objectFit = "cover";
+              // Thêm các phần tử vào cấu trúc cây HTML
+              divIconBox.appendChild(svg);
+              divNotiList.appendChild(divIconBox);
+              divNotiBox.appendChild(divNotiList);
+
+              // Gán nội dung cho các phần tử
+              const title = document.createElement("h3");
+              title.classList.add("fw_6");
+              title.textContent = item.title;
+
+              //
+
+              var seconds = Math.floor((new Date() - date) / 1000);
+
+              //
+              const time = document.createElement("span");
+              var dateString = item?.createdDate;
+              var date = new Date(dateString);
+              var minutes = date.getMinutes();
+              var hours = date.getHours();
+              var day = date.getDate();
+              var month = date.getMonth() + 1; // Ghi chú: Tháng bắt đầu từ 0, nên cần cộng 1
+              var year = date.getFullYear();
+
+              //
+              function timeSince(date) {
+                var seconds = Math.floor((new Date() - date) / 1000);
+
+                var interval = seconds / 31536000;
+
+                if (interval > 1) {
+                  return Math.floor(interval) + " years";
+                }
+                interval = seconds / 2592000;
+                if (interval > 1) {
+                  return Math.floor(interval) + " months";
+                }
+                interval = seconds / 86400;
+                if (interval > 1) {
+                  return Math.floor(interval) + " days";
+                }
+                interval = seconds / 3600;
+                if (interval > 1) {
+                  return Math.floor(interval) + " hours";
+                }
+                interval = seconds / 60;
+                if (interval > 1) {
+                  return Math.floor(interval) + " minutes";
+                }
+                return Math.floor(seconds) + " seconds";
+              }
+
+              var aDay = 24 * 60 * 60 * 1000;
+              //
+              // var formattedDate = `${day < 10 ? `0${day}` : day}.${
+              //   month < 10 ? `0${month}` : month
+              // }.${year}`;
+              time.classList.add("fw_6", "on_surface_color");
+              time.textContent = `${calculateTime(
+                new Date(item.createdDate).getTime()
+              )} trước`;
+
+              const titleContainer = document.createElement("div");
+              titleContainer.classList.add("title");
+              titleContainer.appendChild(title);
+              titleContainer.appendChild(time);
+
+              const description = document.createElement("p");
+              description.classList.add("on_surface_color", "fw_4");
+              description.innerHTML = item.description;
+
+              const dot = document.createElement("i");
+              if (item.isSeen == false) {
+                dot.classList.add("dot");
+              }
+
+              const descContainer = document.createElement("div");
+              descContainer.classList.add("desc");
+              descContainer.appendChild(description);
+              descContainer.appendChild(dot);
+
+              const contentRight = document.createElement("div");
+              contentRight.classList.add("content-right");
+              contentRight.appendChild(titleContainer);
+              contentRight.appendChild(descContainer);
+
+              divNotiList.appendChild(contentRight);
+
+              divNotiBox.addEventListener("click", () => {
+                setSeen(item.id);
+                dot.classList.remove("dot");
+              });
+              // Thêm đoạn mã HTML vào vị trí mong muốn trong trang web
+              // const container = document.getElementById("coupon"); // Thay 'container' bằng id của phần tử cha mong muốn
+              container.appendChild(divNotiBox);
+            });
+          })
+        );
+        // Tạo các phần tử HTML
+      }
+
+      divMoreCoupon.addEventListener("click", () => {
+        // i = i + 1;
+        getNotifyCoupon();
+      });
+    </script>
+  </body>
+</html>

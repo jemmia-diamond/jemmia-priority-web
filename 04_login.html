@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100vh">
+  <head>
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-S7Q7M2B9DJ"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-S7Q7M2B9DJ");
+    </script>
+    <!-- Mobile Specific Metas -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, viewport-fit=cover"
+    />
+    <title>Jemmia Priority - Login</title>
+    <!-- Favicon and Touch Icons  -->
+    <link rel="shortcut icon" href="images/logo.png" />
+    <link rel="apple-touch-icon-precomposed" href="images/logo.jpg" />
+    <!-- Font -->
+    <link rel="stylesheet" href="fonts/fonts.css" />
+    <!-- Icons -->
+    <link rel="stylesheet" href="fonts/icons-alipay.css" />
+    <link rel="stylesheet" href="styles/bootstrap.css" />
+
+    <link rel="stylesheet" type="text/css" href="styles/styles.css" />
+    <link
+      rel="manifest"
+      href="_manifest.json"
+      data-pwa-version="set_in_manifest_and_pwa_js"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="192x192"
+      href="app/icon/icon-192x192.jpg"
+    />
+
+    <script>
+      (() => {
+        if ("serviceWorker" in navigator) {
+          navigator.serviceWorker
+            .getRegistrations()
+            .then(function (registrations) {
+              for (let registration of registrations) {
+                registration.update();
+              }
+            });
+        }
+      })();
+    </script>
+    <style>
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+
+      /* input[type="checkbox"] {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 15px;
+        height: 15px;
+        border: 2px solid #ccc;
+        border-radius: 3px;
+        cursor: pointer;
+        position: relative;
+      } */
+
+      /* input[type="checkbox"]:checked {
+        background-color: #007bff;
+        border-color: #007bff;
+      } */
+      input[type="checkbox"] {
+        accent-color: green;
+      }
+
+      /* Tạo dấu check */
+      /* input[type="checkbox"]:checked::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 6px;
+        width: 3px;
+        height: 9px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      } */
+    </style>
+  </head>
+
+  <body
+    id="body"
+    style="
+      position: relative;
+      background-image: url('/images/ref/04_Login.svg');
+
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    "
+  >
+    <!-- <img
+      id="loading"
+      src="/images/ref/X7EWFdU1JZ0vfk04pa.webp"
+      style="
+        display: none;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        background-color: #33333399;
+      "
+      alt=""
+    /> -->
+    <div
+      class=""
+      id="loading"
+      style="
+        display: none;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        background-color: #33333399;
+      "
+    >
+      <ul class="dot-spinner">
+        <li class="dot-spinner__dot"></li>
+        <li class="dot-spinner__dot"></li>
+        <li class="dot-spinner__dot"></li>
+        <li class="dot-spinner__dot"></li>
+        <li class="dot-spinner__dot"></li>
+        <li class="dot-spinner__dot"></li>
+        <li class="dot-spinner__dot"></li>
+        <li class="dot-spinner__dot"></li>
+        <li class="dot-spinner__dot"></li>
+        <li class="dot-spinner__dot"></li>
+      </ul>
+    </div>
+
+    <div class="login-section" id="login-section" style="height: 100vh">
+      <div class="" style="display: none" id="verify_otp">
+        <div class="header">
+          <div
+            class="tf-container"
+            style="
+              background: transparent;
+              border-bottom: 0.1px solid lightgrey;
+            "
+          >
+            <div
+              class="tf-statusbar br-none d-flex justify-content-between align-items-center"
+              style="background: transparent"
+            >
+              <a href="/" class=""> <i class="icon-left"></i> </a>
+              <h3 style="background: transparent">Nhập mã OTP</h3>
+              <a href="#" style="opacity: 0">logout</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-5">
+          <div class="tf-container">
+            <div class="d-none" id="toast">
+              <div class="alert alert-danger" role="alert" id="titleToast">
+                Mã otp không hợp lệ
+              </div>
+            </div>
+            <div class="tf-form tf-form-verify">
+              <div class="d-flex group-input-verify gap-2">
+                <input
+                  type="text"
+                  inputmode="numeric"
+                  id="1"
+                  maxlength="1"
+                  pattern="[0-9]"
+                  class="input-verify col"
+                  style="background: transparent"
+                />
+                <input
+                  type="tel"
+                  id="2"
+                  maxlength="1"
+                  pattern="[0-9]"
+                  class="input-verify col"
+                  style="background: transparent"
+                />
+                <input
+                  type="tel"
+                  id="3"
+                  maxlength="1"
+                  pattern="[0-9]"
+                  class="input-verify col"
+                  style="background: transparent"
+                />
+                <input
+                  type="tel"
+                  id="4"
+                  maxlength="1"
+                  pattern="[0-9]"
+                  class="input-verify col"
+                  style="background: transparent"
+                />
+                <input
+                  type="tel"
+                  id="5"
+                  maxlength="1"
+                  pattern="[0-9]"
+                  class="input-verify col"
+                  style="background: transparent"
+                />
+                <input
+                  type="tel"
+                  id="6"
+                  maxlength="1"
+                  pattern="[0-9]"
+                  class="input-verify col"
+                  style="background: transparent"
+                />
+              </div>
+              <div class="text-send-code">
+                <p class="fw_4">Mã đăng nhập được gửi tới điện thoại của bạn</p>
+                <!-- <p class="primary_color fw_7" id="">
+                  Resend in&nbsp;<p
+                    id="js-countdown"
+                    data-timer="60"
+                    data-labels=" :  ,  : , : , "
+                  ></p>
+                </p> -->
+              </div>
+              <button id="test" class="tf-btn accent large">Xác thực</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="px-3"
+        style="
+          display: flex;
+          flex-direction: column;
+          justify-content: end;
+          height: 100vh;
+        "
+        id="login"
+      >
+        <div class="tf-form">
+          <h1 class="text-white text-center" style="z-index: 2">Đăng nhập</h1>
+
+          <div class="group-input" id="number" style="display: block">
+            <input
+              type="text"
+              inputmode="numeric"
+              class="phone"
+              pattern="[0-9]"
+              id="phoneNumber"
+              placeholder="Số điện thoại"
+              style="
+                background: transparent;
+                border: 1px solid white;
+                color: white;
+              "
+            />
+            <p class="text-danger" id="valid" for=""></p>
+          </div>
+
+          <button
+            id="send"
+            style="background: #00ba9b; border: none"
+            class="tf-btn accent large"
+          >
+            Lấy mã đăng nhập
+          </button>
+
+          <div
+            class="pt-2"
+            style="
+              max-width: 300px;
+              max-height: 50px;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+            "
+            id="recapcha"
+          ></div>
+          <div class="d-flex gap-2">
+            <input
+              type="checkbox"
+              id="policy"
+              class="checkbox"
+              style="cursor: pointer"
+            />
+            <p class="text-white">
+              Tôi đã đọc và đồng ý với
+              <span
+                class="text-decoration-underline"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModalCenter"
+                class="text-white"
+                style="cursor: pointer"
+                >Điều khoản sử dụng</span
+              >
+            </p>
+            <!-- href="/68_gift-card-detail.html?id=72&name=uu_dai_thang" -->
+            <!-- class="text-decoration-underline" data-bs-toggle="modal" data-bs-target="#exampleModalCenter" -->
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="exampleModalCenter">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header sticky-top bg-white">
+              <h5
+                class="modal-title"
+                style="padding-bottom: 0px !important; font-size: 24px"
+              >
+                Điều khoản sử dụng
+              </h5>
+              <button class="btn-close" data-bs-dismiss="modal">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+            <div class="modal-body" style="padding-top: 0px !important">
+              <p>
+                Website https://priority.jemmia.vn/ (sau đây gọi là “Website”)
+                thuộc sở hữu của Công ty Cổ phần Jemmia (sau đây gọi là
+                “JEMMIA”). Việc sử dụng website cho việc tìm kiếm nội dung,
+                thông tin, các dịch vụ, hàng hóa của JEMMIA được cung cấp trên
+                Website đều phải tuân theo Điều khoản và điều kiện sử dụng này.
+                Bạn vui lòng đọc kỹ toàn bộ nội dung của Điều khoản và điều kiện
+                sử dụng này một cách cẩn thận trước khi bắt đầu sử dụng Website.
+                Bằng cách truy cập Website và sử dụng bất kỳ tính năng nào hoặc
+                gửi thông tin cho JEMMIA, bạn đồng ý đã đọc, hiểu và chịu sự
+                ràng buộc bởi Điều khoản và điều kiện sử dụng này, cùng toàn bộ
+                các chính sách được đăng tải trên Website. Nếu bạn không đồng ý
+                với bất cứ nội dung nào trong Điều khoản và điều kiện sử dụng
+                này, vui lòng không truy cập và/hoặc thực hiện bất cứ thao tác,
+                giao dịch nào trên Website. JEMMIA có quyền sửa đổi nội dung
+                Điều khoản và điều kiện sử dụng này, các chính sách, thông báo,
+                quy chế hoạt động được đăng tải trên Website vào bất thời điểm
+                nào và sẽ được JEMMIA thông báo đến bạn bằng các phương thức phù
+                hợp theo quy định pháp luật. Bạn được xem là đã biết và chịu sự
+                ràng buộc bởi bất kỳ thay đổi nào như vậy kể từ khi những thay
+                đổi, bổ sung được đăng tải trên Website và bạn vẫn tiếp tục giao
+                dịch, thực hiện thao tác trên Website.
+              </p>
+              <div class="mt-2">
+                <h5><strong>I. NỘI DUNG WEBSITE </strong></h5>
+                <p>
+                  Nội dung trên Website này được cung cấp bởi JEMMIA, bao gồm
+                  nhưng không giới hạn: đồ họa, hình ảnh, ảnh chụp màn hình, văn
+                  bản, tệp có thể tải xuống kỹ thuật số, nhãn hiệu, logo, tên
+                  sản phẩm và chương trình, slogan và nội dung biên soạn của
+                  những phần trên. Toàn bộ nội dung, thông tin, tư liệu đăng tải
+                  trên Website là tài sản thuộc sở hữu của JEMMIA, được bảo vệ
+                  theo quy định về bảo hộ nhãn hiệu, bản quyền và các quy định
+                  về sở hữu trí tuệ khác. Bạn không được tải xuống, hiển thị
+                  hoặc sử dụng bất kỳ nội dung nào trên Website cho bất kỳ mục
+                  đích thương mại hoặc phi thương mại không liên quan đến việc
+                  sử dụng sản phẩm hoặc dịch vụ của JEMMIA, gây nhầm lẫn cho
+                  người tiêu dùng, làm mất uy tín của JEMMIA. Đồng thời, bạn
+                  không được làm lại, thiết kế lại, tách rời, thay đổi, phân
+                  phối, tái xuất bản, hiển thị lại, phát sóng, sao chép, làm
+                  mẫu, chuyển giao hoặc truyền tải lại nội dung, thông tin, tư
+                  liệu được đăng tải trên Website theo bất kỳ cách thức nào hoặc
+                  bằng bất kỳ phương tiện nào hoặc được lưu trữ trong hệ thống
+                  thông tin hoặc được cài đặt trên bất kỳ hệ thống máy chủ, hệ
+                  thống hoặc thiết bị nào mà không được sự cho phép trước bằng
+                  văn bản của JEMMIA.
+                </p>
+              </div>
+              <div class="mt-2">
+                <h5><strong>II. SỬ DỤNG WEBSITE </strong></h5>
+                <p>Khi sử dụng Website, cần tuân theo những yêu cầu sau đây:</p>
+                <p>
+                  (a) Không sử dụng bất kỳ tính năng giao tiếp điện tử nào của
+                  Website cho mục đích bất hợp pháp, lạm dụng, xâm phạm quyền
+                  riêng tư của người khác, quấy rối, bôi nhọ, nói xấu, đe dọa
+                  người khác. Tất cả được xác định bởi JEMMIA theo quyết định
+                  riêng của chúng tôi;
+                </p>
+                <p>
+                  (b) Không được tải lên, đăng, sao chép hoặc phân phối bất kỳ
+                  thông tin, phần mềm hoặc tài liệu nào khác được bảo vệ bản
+                  quyền hoặc quyền sở hữu trí tuệ nào (cũng như quyền công khai
+                  và quyền riêng tư) mà không có sự cho phép của chủ sở hữu;
+                </p>
+                <p>
+                  (c) Không được thu thập hoặc lưu trữ dữ liệu cá nhân về người
+                  dùng khác;
+                </p>
+                <p>
+                  (d) Không sử dụng Website cho bất kỳ mục đích thương mại nào
+                  mà chưa thông qua sự chấp thuận rõ ràng bằng văn bản của
+                  JEMMIA;
+                </p>
+                <p>
+                  (e) Không tải lên, đăng, gửi email, truyền tải bất kỳ tài liệu
+                  quảng cáo hoặc bất kỳ hình thức chào mời, liên lạc trái phép
+                  nào khác thông qua Website;
+                </p>
+                <p>
+                  (f) Không tải lên, đăng, gửi email hoặc truyền tải bất kỳ tài
+                  liệu nào có chứa vi-rút hoặc bất kỳ mã, tệp, chương trình máy
+                  tính nào có thể làm gián đoạn, hạn chế hoặc can thiệp vào chức
+                  năng của Website, phần mềm máy tính, thiết bị phần cứng hoặc
+                  viễn thông. Tại một số khu vực nhất định trên Website, bạn có
+                  thể gửi đánh giá sản phẩm, câu hỏi, phản hồi bằng văn bản,
+                  hình ảnh và một số tài liệu khác. Khi sử dụng các tính năng
+                  này, bạn không được gửi hoặc đăng nội dung bất hợp pháp, phỉ
+                  báng, bôi nhọ, khiêu dâm, xâm phạm quyền riêng tư của người
+                  khác, đe dọa, quấy rối, lạm dụng, phân biệt chủng tộc, bạo
+                  lực, phản động hoặc không phù hợp theo xác định của JEMMIA;
+                  không gửi hoặc đăng bất kỳ nội dung nào chứa thông tin về cá
+                  nhân, vi phạm quyền riêng tư/công khai của bất kỳ cá nhân hoặc
+                  tổ chức nào, hoặc mọi nội dung mà bạn có nghĩa vụ giữ bí mật
+                  theo hợp đồng/thỏa thuận với bên thứ ba đó. Bạn không có quyền
+                  sở hữu bất kỳ thông tin, nội dung nào được đăng tải trên
+                  Website, đồng thời cũng không có quyền truy cập vào hệ thống
+                  nội bộ của Website và thay đổi các tính năng của Website. Bạn
+                  cấp cho JEMMIA quyền trên cơ sở không độc quyền để sử dụng các
+                  tài liệu hoặc thông tin mà bạn cung cấp trên Website và/hoặc
+                  cung cấp cho JEMMIA, bao gồm nhưng không giới hạn các câu hỏi,
+                  đánh giá, nhận xét, đề xuất, các yêu cầu về hàng hóa, thông
+                  tin, tài liệu để JEMMIA cung ứng hàng hóa đến bạn. Khi bạn
+                  đăng nhận xét hoặc đánh giá lên Website, bạn cũng cấp cho
+                  JEMMIA quyền được sử dụng tên/tên tài khoản mà bạn sử dụng để
+                  đưa ra đánh giá, nhận xét hoặc nội dung khác trên Website. Bạn
+                  không được sử dụng thư điện tử giả, giả mạo danh tính của
+                  người khác hoặc sử dụng địa chỉ thư điện tử gây hiểu lầm cho
+                  JEMMIA hoặc các bên thứ ba về thông tin mà bạn cung cấp.
+                  JEMMIA có thể, nhưng không có nghĩa vụ phải công bố, xóa bỏ
+                  hoặc chỉnh sửa các thông tin mà bạn cung cấp trên Website. Bạn
+                  có toàn quyền ngừng truy cập, sử dụng Website theo ý muốn của
+                  mình. Bạn có thể ngừng sử dụng Website bằng cách hủy kích hoạt
+                  tài khoản người dùng (nếu có), ngừng truy cập vào Website bất
+                  kỳ lúc nào. JEMMIA có quyền đình chỉ hoặc chấm dứt quyền truy
+                  cập của bạn vào Website hoặc sử dụng bất kỳ tính năng nào trên
+                  Website hoặc xóa tài khoản người dùng của bạn trong các trường
+                  hợp sau:
+                </p>
+                <p>
+                  (a) bạn vi phạm các quy định tại Điều khoản và điều kiện sử
+                  dụng này, hoặc bất cứ chính sách nào được JEMMIA công khai
+                  trên Website;
+                </p>
+                <p>
+                  (b) JEMMIA thực hiện theo yêu cầu của pháp luật, hoặc do cơ
+                  quan có thẩm quyền yêu cầu hoặc theo lệnh của tòa án;
+                </p>
+                <p>
+                  (c) JEMMIA có cơ sở để tin rằng hành vi của bạn đã gây ra tổn
+                  hại hoặc tổn thất cho người dùng khác hoặc bên thứ ba – ví dụ:
+                  tấn công, lừa đảo, quấy rối, gửi thư rác, lừa dối người khác
+                  hoặc sao chép nội dung không thuộc về bạn;
+                </p>
+                <p>
+                  (d) trong trường hợp có cơ sở để chứng minh thông tin bạn cung
+                  cấp cho JEMMIA là không chính xác, sai lệch, không đầy đủ hoặc
+                  vi phạm pháp luật hay thuần phong mỹ tục Việt Nam;
+                </p>
+                <p>
+                  (e) bạn có những hành vi ảnh hưởng đến hoạt động kinh doanh và
+                  vận hành trên Website;
+                </p>
+                <p>
+                  (f) bạn phá sản, bị kết án hoặc đang trong thời gian thụ án,
+                  hoặc trong trường hợp bạn tiếp tục sử dụng Website có thể gây
+                  cho Website trách nhiệm pháp lý, có những hoạt động lừa đảo,
+                  giả mạo, gây rối loạn thị trường, gây mất đoàn kết đối với các
+                  người dùng khác của Website, hoạt động vi phạm pháp luật hiện
+                  hành của Việt Nam.
+                </p>
+              </div>
+              <div class="mt-2">
+                <h5><strong>III. TÀI KHOẢN, MẬT KHẨU VÀ BẢO MẬT </strong></h5>
+                <p>
+                  Một số tính năng của Website yêu cầu đăng ký hoặc cung cấp
+                  thông tin để truy cập, sử dụng. Nếu bạn chọn không cung cấp
+                  thông tin đó, bạn có thể không truy cập hoặc không sử dụng
+                  được các tính năng mong muốn trên Website. Khi tạo tài khoản
+                  hoặc đăng ký thông tin, bạn phải hoàn tất quy trình đăng ký
+                  bằng cách cung cấp cho JEMMIA thông tin đầy đủ và chính xác
+                  theo yêu cầu và hướng dẫn trên Website. Trong quá trình đăng
+                  ký, bạn có thể được yêu cầu nhập tên, địa chỉ e-mail và mật
+                  khẩu. Bạn hoàn toàn chịu trách nhiệm duy trì tính bảo mật của
+                  mật khẩu và tài khoản của mình. JEMMIA không chịu trách nhiệm
+                  cho bất kỳ tổn thất nào xảy ra do người khác sử dụng mật khẩu
+                  hoặc tài khoản của bạn mà không do lỗi của JEMMIA. Bạn có thể
+                  nhận thư điện tử khuyến mại, tin nhắn văn bản SMS và/hoặc tin
+                  nhắn tại ứng dụng hoặc thông báo từ JEMMIA theo cách thức phù
+                  hợp với chính sách của JEMMIA. Trong trường hợp bạn không muốn
+                  tiếp tục nhận các thông báo như vậy, bạn có quyền từ chối bằng
+                  cách hủy đăng ký nhận thông báo tại phần thiết lập của email.
+                </p>
+              </div>
+              <div class="mt-2">
+                <h5><strong>IV. THÔNG BÁO </strong></h5>
+                <p>
+                  Thông Báo từ JEMMIA: Tất cả các thông báo hoặc thông tin liên
+                  lạc khác được xem là đã gửi cho bạn nếu:
+                </p>
+                <p>
+                  (a) được JEMMIA gửi cho bạn qua bất kỳ phương thức in ấn hoặc
+                  điện tử mà JEMMIA lựa chọn, sẽ được coi là đã được thông báo
+                  đến bạn vào ngày thông báo được công bố hoặc phát sóng; hoặc
+                </p>
+                <p>
+                  (b) được JEMMIA gửi qua đường bưu điện hoặc gửi đến địa chỉ
+                  của bạn, sẽ được xem là bạn đã nhận được vào ngày ký nhận
+                  thông báo.
+                </p>
+                <p>
+                  Thông Báo từ bạn: Bạn chỉ có thể thông báo cho JEMMIA bằng văn
+                  bản được gửi đến địa chỉ văn phòng đăng ký của JEMMIA hoặc địa
+                  chỉ thư điện tử được chỉ định của JEMMIA hoặc liên lạc với
+                  JEMMIA thông qua bộ phận chăm sóc, và JEMMIA chỉ được xem là
+                  đã nhận được thông báo sau khi ký nhận thông báo đó (nếu thông
+                  báo được gửi bằng văn bản). Mặc dù JEMMIA cố gắng phản hồi
+                  nhanh chóng các thông báo từ bạn, JEMMIA không thể đảm bảo
+                  rằng JEMMIA sẽ luôn phản hồi nhanh nhất.
+                </p>
+                <p>Thông tin nhận Thông báo của JEMMIA:</p>
+                <p>
+                  Địa chỉ văn phòng: 244/29 Huỳnh Văn Bánh, Phường 11, Quận Phú
+                  Nhuận, TP Hồ Chí Minh, Việt Nam
+                </p>
+                <p>Email liên hệ: chamsockhachhang@jemmia.vn</p>
+                <p>Hotline chăm sóc khách hàng: 028 730 260 66</p>
+                <p>
+                  Không ảnh hưởng đến các quy định trên đây, JEMMIA có quyền
+                  thay đổi các phương thức thông báo vào từng thời điểm (bao gồm
+                  nhưng không giới hạn đối với thư điện tử, tin nhắn văn bản SMS
+                  hoặc các hình thức liên lạc điện tử khác) và sẽ được cập nhật
+                  trên Website.
+                </p>
+              </div>
+              <div class="mt-2">
+                <h5>
+                  <strong>V. LUẬT ĐIỀU CHỈNH VÀ GIẢI QUYẾT TRANH CHẤP </strong>
+                </h5>
+                <p>
+                  Điều khoản và Điều kiện sử dụng này và các hợp đồng, giao dịch
+                  giữa JEMMIA và bạn (và tất cả nghĩa vụ phát sinh ngoài hợp
+                  đồng hoặc có liên quan) sẽ được điều chỉnh và giải thích theo
+                  pháp luật Việt Nam.
+                </p>
+                <p>
+                  Nếu có tranh chấp phát sinh liên quan đến Điều khoản và Điều
+                  kiện sử dụng này, thì tranh chấp đó sẽ được đưa ra giải quyết
+                  bởi Tòa án có thẩm quyền tại VThành phố Hồ Chí Minh, Việt Nam.
+                </p>
+              </div>
+              <div class="mt-2">
+                <h5>
+                  <strong>VI. ĐIỀU KHOẢN KHÁC</strong>
+                </h5>
+                <p>
+                  Quyền và yêu cầu bồi thường: Trừ khi được quy định khác đi
+                  trong Điều khoản và Điều kiện sử dụng này, quyền và yêu cầu
+                  bồi thường của JEMMIA theo Điều khoản và Điều kiện sử dụng này
+                  sẽ được tích lũy và không ảnh hưởng đến và thêm vào bất kỳ
+                  quyền hoặc yêu cầu bồi thường nào khác của JEMMIA theo quy
+                  định của pháp luật. Việc JEMMIA không thực hiện bất kỳ quyền
+                  hoặc yêu cầu bồi thường nào theo Điều khoản và Điều kiện sử
+                  dụng này, hoặc theo pháp luật (trừ trường hợp được quy định rõ
+                  trong Điều khoản và Điều kiện sử dụng này hoặc theo pháp luật
+                  nếu có) sẽ không được xem là cản trở hoặc ngăn cản việc JEMMIA
+                  thực hiện bất kỳ quyền hoặc biện pháp khắc phục nào khác theo
+                  quy định của pháp luật.
+                </p>
+                <p>
+                  Không từ bỏ: Việc JEMMIA không thực thi bất cứ quyền nào được
+                  nêu trong Điều khoản và Điều kiện sử dụng này sẽ không được
+                  xem là JEMMIA đã từ bỏ quyền được thực hiện các điều khoản đó
+                  và việc không thực thi này sẽ không ảnh hưởng đến quyền được
+                  thực thi Điều khoản và Điều kiện sử dụng trong tương lai.
+                  JEMMIA vẫn có quyền thực hiện các quyền và yêu cầu bồi thường
+                  của mình trong bất kỳ trường hợp khi bạn vi phạm Điều khoản và
+                  Điều kiện sử dụng này.
+                </p>
+                <p>
+                  Hiệu lực từng phần: Nếu bất kỳ điều khoản nào của Điều khoản
+                  và Điều kiện sử dụng được coi là bất hợp pháp, không hợp lệ
+                  hoặc không thể thực thi ở bất kỳ khía cạnh nào, thì tính pháp
+                  lý, tính hợp lệ và tính thực thi của những điều khoản khác
+                  trong Điều khoản và Điều kiện sử dụng này và phần còn lại của
+                  điều khoản bị ảnh hưởng trong Điều khoản và Điều kiện sử dụng
+                  này vẫn tiếp tục có hiệu lực; và có hiệu lực như thể những nội
+                  dung bất hợp pháp, không hợp lệ hoặc không thể thực thi đã bị
+                  xóa bỏ khỏi Điều khoản và Điều kiện sử dụng này.
+                </p>
+                <p>
+                  Sửa lỗi: Mọi lỗi về đánh máy, văn thư, hoặc các lỗi hoặc thiếu
+                  sót khác trong bất kỳ chấp thuận, hóa đơn hoặc tài liệu nào
+                  khác từ phía JEMMIA sẽ có thể được JEMMIA đính chính lại mà
+                  không làm phát sinh bất kỳ trách nhiệm nào mới đối với JEMMIA.
+                </p>
+                <p>
+                  Sự ràng buộc và đồng bộ: Bạn thừa nhận và đồng ý rằng bất kỳ
+                  tài liệu lưu trữ nào (bao gồm tài liệu về bất kỳ cuộc trò
+                  chuyện qua điện thoại liên quan đến Website, nếu có) do JEMMIA
+                  hoặc các nhà cung cấp dịch vụ của JEMMIA lưu giữ liên quan đến
+                  Website và việc cung ứng hàng hóa trên Website sẽ là cơ sở có
+                  giá trị ràng buộc và là bằng chứng sau cùng về bất kỳ thông
+                  tin và/hoặc dữ liệu nào được chuyển giao giữa JEMMIA và Bạn.
+                  Bạn theo đây đồng ý rằng tất cả các tài liệu như vậy đều có
+                  thể được xem là bằng chứng và Bạn sẽ không phản đối hoặc tranh
+                  chấp về khả năng chấp nhận, độ tin cậy, độ chính xác hoặc tính
+                  xác thực của các tài liệu này chỉ vì lý do các tài liệu này ở
+                  dạng điện tử hoặc trích xuất từ hệ thống máy tính và Bạn từ bỏ
+                  bất kỳ quyền của mình, nếu có, để phản đối theo đó.
+                </p>
+                <p>
+                  Giao thầu phụ và chỉ định: JEMMIA có quyền chỉ định hoặc giao
+                  nhà thầu phụ thực hiện bất kỳ phần nội dung công việc nào của
+                  JEMMIA liên quan đến Website và việc cung ứng hàng hóa trên
+                  Website. JEMMIA có quyền sử dụng bất kỳ nhà cung cấp dịch vụ,
+                  nhà thầu phụ và/hoặc đại lý ủy quyền theo các điều khoản và
+                  điều kiện mà JEMMIA cho là phù hợp.
+                </p>
+                <p>
+                  Chuyển nhượng: Bạn không được chuyển nhượng các quyền và nghĩa
+                  vụ của mình theo Điều khoản và Điều kiện sử dụng này mà không
+                  được sự đồng ý trước bằng văn bản của JEMMIA. JEMMIA có quyền
+                  chuyển nhượng các quyền và nghĩa vụ của mình theo Điều khoản
+                  và Điều kiện sử dụng này cho bất kỳ bên thứ ba nào.
+                </p>
+                <p>
+                  Trường hợp bất khả kháng: JEMMIA sẽ không chịu trách nhiệm về
+                  việc không thực hiện, lỗi, gián đoạn hoặc chậm trễ trong việc
+                  thực hiện các nghĩa vụ của mình theo Điều khoản và Điều kiện
+                  sử dụng này (hoặc bất kỳ phần nào trong đó) hoặc bất kỳ sự
+                  không chính xác, không đáng tin cậy hoặc không phù hợp nào
+                  trên Website nếu điều này là do, toàn bộ hoặc một phần, trực
+                  tiếp hoặc gián tiếp phát sinh từ một sự kiện hoặc lỗi nằm
+                  ngoài tầm kiểm soát hợp lý của JEMMIA.
+                </p>
+              </div>
+
+              <h4>
+                <strong
+                  >Điều khoản và điều kiện sử dung này được áp dụng kể từ ngày
+                  01/08/2024
+                </strong>
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="javascript/jquery.min.js"></script>
+    <script type="text/javascript" src="javascript/bootstrap.min.js"></script>
+    <script type="text/javascript" src="javascript/password-addon.js"></script>
+
+    <script type="text/javascript" src="javascript/main.js"></script>
+    <script type="text/javascript" src="javascript/verify-input.js"></script>
+
+    <script type="text/javascript" src="javascript/init.js"></script>
+    <script type="module" src="/javascript/firebase.js"></script>
+  </body>
+</html>

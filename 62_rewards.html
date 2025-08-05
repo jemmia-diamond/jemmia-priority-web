@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> <meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S7Q7M2B9DJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-S7Q7M2B9DJ');
+</script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Specific Metas -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, viewport-fit=cover"
+    />
+    <title>Jemmia Priority - Rewards</title>
+    <!-- Favicon and Touch Icons  -->
+    <link rel="shortcut icon" href="images/logo.png" />
+    <link rel="apple-touch-icon-precomposed" href="images/logo.png" />
+    <!-- Font -->
+    <link rel="stylesheet" href="fonts/fonts.css" />
+    <!-- Icons -->
+    <link rel="stylesheet" href="fonts/icons-alipay.css" />
+    <link rel="stylesheet" href="styles/bootstrap.css" />
+    <link rel="stylesheet" href="styles/swiper-bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="styles/styles.css" />
+    <link
+      rel="manifest"
+      href="_manifest.json"
+      data-pwa-version="set_in_manifest_and_pwa_js"
+    />
+    <link rel="apple-touch-icon" sizes="192x192" href="app/icon/icon-192x192.jpg">
+  </head>
+
+  <body class="" >
+    <!-- preloade -->
+  
+    <!-- /preload -->
+    <div class="header is-fixed">
+      <div class="tf-container">
+        <div
+          class="tf-statusbar d-flex justify-content-center align-items-center"
+        >
+          <a style="outline: none;" href="#" class="back-btn st1"> <i class="icon-left"></i> </a>
+          <h3>Đổi Thưởng</h3>
+          <!-- <a href="#" id="btn-popup-up" class="action-right" style="color: white;"
+            ><i class="icon icon-notification1" style="color: white;"></i>
+          </a> -->
+        </div>
+      </div>
+    </div>
+
+    <div id="app-wrap" class="" style="height: 140%;padding-bottom: 100px;">
+      <div class="">
+        <!-- <div class="input-field mt-3">
+                <span class="icon-search"></span>
+                <input required class="search-field value_input" placeholder="Search" type="text">
+                <span class="icon-clear"></span>
+            </div> -->
+        <div class="card-secton mt-5">
+          <div class="tf-container">
+            <div class="" style="background-image: linear-gradient(white, lightgrey);border-radius: 15px;">
+              <div class="tf-balance-box" id="bg_card" style=" background-position: center; background-size: cover;background-color: transparent;">
+                <div class="balance">
+                    <div class="row text-white" >
+                        <div class="col-12" style="height: 100px;">
+                            <img style="display: none;" src="images/background/card_member.png" alt="">
+                        </div>
+                        <div class="col-6 br-right pt-3">
+                            <div class="inner-left ">
+                                <a style="outline: none;" href="85_bankDetail.html"   ><h3 id="full_name" class="gradient-text"></h3></a>
+                                <div class="d-flex gap-1">
+                                  <p class="gradient-text">Hạng</p>
+                                  <p class="gradient-text" style="color: white;" id="rank_name" ></p>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="col-6 pt-3">
+                            <div class="inner-right">
+                                <p style="color: white;">Điểm thưởng</p>
+                                <div class="d-flex align-items-center gap-1 justify-content-end" style="color: white;">
+                                  <img class="mx-1 " style="width: 7%;" src="./images/Vector.svg" alt="">
+                                  <p id="point" class="text-white fw-bold"></p>
+                                  <span>Points</span>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             
+            </div>
+            </div>
+            
+          </div>
+        </div>
+        <!--  -->
+
+        <div class="bg-white">
+          <div class="mt-5 tf-tab">
+            <div class="tf-tab  mt-5 " style="height: 100%;">
+                <ul class="nav nav-tabs lined" role="tablist" style="border-bottom: 1px solid lightgrey;">
+                    <li class="nav-item" >
+                      <a style="outline: none;" href="#" class="nav-link  active" data-bs-toggle="tab" data-bs-target="#item1" role="tab" aria-controls="item1" aria-selected="true">
+                            Đổi Thưởng
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                       <a style="outline: none;" href="#" class="nav-link"  data-bs-toggle="tab" data-bs-target="#item2" role="tab" aria-controls="item2" aria-selected="false">
+                            Đổi Mã Giảm Giá
+                       </a>
+                    </li>
+                    
+                </ul>
+                <div class="tab-content mt-4">
+                    <div class="tab-pane fade show active" id="item1" role="tabpanel">
+                        <div class="tf-container">
+                          <div class="swiper-container tes-gift mt-5 ">
+                            <div class="swiper-wrapper" id="cash_back">
+                             
+                              
+                            </div>
+                          </div>
+                          <!--  -->
+                          <div class="" id="card">
+                            
+                          </div>
+                         
+                          <!--  -->
+                       
+                          <div class="tf-container mt-5 ">
+                            <a  href="83_add_new_card.html" id="addCard"  class="tf-btn large"  style="border:2px dashed lightgrey; font-size: 14px;color: black; outline: none;">Thêm tài khoản nhận thanh toán <i class="icon-plus fw_7"></i> </a>
+                          </div>
+                          <div class="tf-container mt-5 ">
+                            <button  id="btn-popup-up"  class="tf-btn large "  style=" font-size: 14px;color: white;background: #003A40; outline: none;">Rút Tiền </button>
+                          </div>
+
+                        
+                        </div>
+                    </div>
+                    <!--  -->
+                    <div class="tab-pane fade" id="item2" role="tabpanel">
+                       <div class="tf-form tf-container">
+                        <div class="group-input input-field input-money">
+                          <label for="">Nhập số tiền cần đổi</label>
+                          <input
+                            min="0"
+                            required
+                            class="search-field  st1"
+                            type="number"
+                            inputmode="numeric"
+                            id="input_point"
+                          />
+                          <span id="clear" class="icon-clear"></span>
+                          <div class="money row row-cols-4 " id="money">
+                            <!-- <a class="tag-money" href="#">100.000 đ</a>
+                            <a class="tag-money" href="#">200.000 đ</a>
+                            <a class="tag-money" href="#">500.000 đ</a> -->
+                          </div>
+                        </div>
+                       </div>
+                       <div class="d-flex align-items-center justify-content-between tf-container">
+                        <div class="">
+                          <p class="fs-6">Thành Tiền</p>
+                          <h2 id="coupon_money">0 đ</h2>
+                        </div>
+                        <div class=" mt-5 ">
+                              <a style="outline: none;" id="exchange_code" type="submit" class="tf-btn accent large" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shield-fill-check" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.8 11.8 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7 7 0 0 0 1.048-.625 11.8 11.8 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.54 1.54 0 0 0-1.044-1.263 63 63 0 0 0-2.887-.87C9.843.266 8.69 0 8 0m2.146 5.146a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793z"/>
+                              </svg>Đổi mã giảm giá</a>
+                        </div>
+                       </div>
+                    </div>
+                   
+                </div>
+                
+
+                <div class="tf-panel up">
+                  <div class="panel_overlay"></div>
+                  <div class="panel-box panel-up">
+                      <div class="header bg_white_color">
+                          <div class="tf-container">
+                              <div class="tf-statusbar d-flex justify-content-center align-items-center">
+                                  <a style="outline: none;" href="#" class="clear-panel"> <i class="icon-close1"></i> </a>
+                                  <h3>Rút tiền</h3>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="panel-content mb-5 mt-5" style="z-index: 888;">
+                          <div class="tf-container">
+                            <div class="tf-card-list bg_surface_color large out-line mt-5 " style="border: none;">
+                              <div class="logo">
+                                  <img style="width: 24px;height: 24px; object-fit: cover;" src="images/ref/Card.svg" alt="image">
+                              </div>
+                              <div class="info">
+                                  <h4 class="fw_6"><a style="outline: none;"  id="card_name_2">Mastercard</a></h4>
+                                  <p id="card_number_2">****  ****  ****   ****</p>
+                              </div>
+                              <!-- <input type="checkbox" class="tf-checkbox circle-check" checked> -->
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+                              </svg>
+                            </div>
+
+                            <!--  -->
+                            <ul class="box-settings-profile mt-1 mb-8">
+                              <li class="py-3">
+                                  <a  style="outline: none;" class="list-setting-profile">
+                                      
+                                      <p class="">Point</p>
+                                      <p class="text-end fw-bold" id="cash_money">100.000 đ</p>
+                                  </a> 
+                              </li>
+                              <li class="py-3">
+                                  <a style="outline: none;" class="list-setting-profile">
+                                      <span class="icon icon-user3"></span>                      
+                                      <p>Số lượng</p>
+                                      <input type="number" min="0" inputmode="numeric" class="fw-bold text-end" id="count" style="color: #44B461;width: 20%; border: none;" />
+                                  </a>  
+                              </li>
+                              <li class="d-flex align-items-center  justify-content-between ">
+                                <div class="">
+                                  <p class="fs-6">Thành Tiền</p>
+                                  <h2 id="cash_money_all"></h2>
+                                </div>
+                                <div class=" mt-5">
+                                      <button data-bs-toggle="modal" id="withDraw"
+                                      data-bs-target="#exampleModalCenter" type="submit"  type="submit" class="tf-btn accent large clear-panel"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shield-fill-check" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.8 11.8 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7 7 0 0 0 1.048-.625 11.8 11.8 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.54 1.54 0 0 0-1.044-1.263 63 63 0 0 0-2.887-.87C9.843.266 8.69 0 8 0m2.146 5.146a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793z"/>
+                                      </svg><p id="titleWithDraw">Rút Tiền</p></button>
+                                </div>
+                               </li>
+                          </ul>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+         
+            
+        </div>
+        </div>
+   
+        <div class="modal fade " id="exampleModalCenter" style="z-index: 99999;">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <!-- <h5 class="modal-title">Modal title</h5> -->
+                <img
+                  src="./images/rewards/Icon Success.png"
+                  class=""
+                  style="position: absolute; width: 50%; left: 25%; "
+                  alt=""
+        
+                />
+                <!-- <button class="btn-close" data-bs-dismiss="modal">
+                        <i class="fa-solid fa-xmark"></i>
+                      </button> -->
+              </div>
+              <div class="modal-body mt-5">
+                <div class="d-flex flex-column text-center gap-3">
+                  <h2 id="text_success">Yêu Cầu Rút Tiền Đang Được Xử Lý</h2>
+                  <!-- <h3 id="text_referals_code">YOUR REFERRALS CODE</h3> -->
+                  <!-- <div class="d-flex gap-2 justify-content-center">
+                    <h1 id="code"></h1>
+                    <i
+                      class="icon-copy1"
+                      style="font-size: 35px"
+                      id="clipboard"
+                      onclick="copText()"
+                    ></i>
+                  </div> -->
+                  <!-- <div class="text-center flex-column gap-1">
+                    <p id="text-date">Mã sẽ hết hạn trong 1h nữa</p>
+                    <p id="date"></p>
+                  </div> -->
+                </div>
+                <button
+                  type="submit"
+                  class="tf-btn accent large mt-5"
+                  data-bs-dismiss="modal"
+                  onclick="location.reload()"
+                >
+                  Đóng
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+        <div class="modal fade" id="exchange">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <!-- <h5 class="modal-title">Modal title</h5> -->
+                <img
+                  src="./images/rewards/Icon Success.png"
+                  class=""
+                  style="position: absolute; width: 50%; left: 25%"
+                  alt=""
+                  id="icon_success"
+                />
+                <!-- <button class="btn-close" data-bs-dismiss="modal">
+                        <i class="fa-solid fa-xmark"></i>
+                      </button> -->
+              </div>
+              <div class="modal-body mt-5">
+                <div class="d-flex flex-column text-center gap-3">
+                  <h2 id="text_success_exchange">Đổi Mã Thành Công</h2>
+                  <h3 id="text_referals_code"></h3>
+                  <div class="d-flex gap-2 justify-content-center">
+                    <h1 id="code_exchange"></h1>
+                    <i
+                      class="icon-copy1"
+                      style="font-size: 35px"
+                      id="clipboard"
+                      
+                  
+                    ><p style='font-size: 12px; font-family: -apple-system, BlinkMacSystemFont, "Plus Jakarta Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji"' id="text_copied">Copied</p></i>
+                    
+                  </div>
+                  <div class="text-center flex-column gap-1">
+                    <!-- <p id="text-date">Mã sẽ hết hạn trong 1h nữa</p> -->
+                    <p id="date"></p>
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  class="tf-btn accent large mt-5"
+                  data-bs-dismiss="modal"
+                  onclick="location.reload()"
+                >
+                  Đóng
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+       
+        
+
+    <div class="bottom-navigation-bar" style="">
+      <div class="tf-container">
+        <ul class="tf-navigation-bar">
+          <li>
+            <a
+            style="outline: none"
+              class="fw_4 d-flex justify-content-center align-items-center flex-column"
+              href="/"
+              ><i class="icon-home"></i> Trang chủ</a
+            >
+          </li>
+          <li>
+            <a
+            style="outline: none"
+              class="fw_4 d-flex justify-content-center align-items-center flex-column"
+              href="58_history.html"
+              ><i class="icon-history"></i> Lịch sử GD</a
+            >
+          </li>
+          <li>
+            <a
+            style="outline: none"
+              class="fw_4 d-flex justify-content-center align-items-center flex-column"
+              href="#tel:02873026066"
+              ><img
+              class="border p-2 rounded-circle text-center object-fit-cover"
+              style="background: #003a40; width: 42px; height: 42px; object-fit: cover;"
+              src="./images/call.svg"
+              alt="tel:02873026066"
+          />
+            </a>
+          </li>
+          <li class="active">
+            <a
+            style="outline: none"
+              class="fw_6 d-flex justify-content-center align-items-center flex-column"
+              href="62_rewards.html"
+            >
+              <i class="icon-star-fill"></i>Điểm thưởng
+            </a>
+          </li>
+          <li>
+            <a
+            style="outline: none"
+              class="fw_4 d-flex justify-content-center align-items-center flex-column"
+              href="69_profile.html"
+              ><i class="icon-user-outline"></i> Cá nhân</a
+            >
+          </li>
+        </ul>
+        <!-- <span class="line"></span> -->
+      </div>
+    </div>
+  
+
+    <script type="text/javascript" src="javascript/jquery.min.js"></script>
+    <script type="text/javascript" src="javascript/bootstrap.min.js"></script>
+    <script
+      type="text/javascript"
+      src="javascript/swiper-bundle.min.js"
+    ></script>
+    <script type="text/javascript" src="javascript/swiper.js"></script>
+    <script type="text/javascript" src="javascript/main.js"></script>
+    <script src="./javascript/profile.js"></script>
+    <script src="./javascript/coupon.js"></script>
+  </body>
+</html>
