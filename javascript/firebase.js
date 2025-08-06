@@ -9,6 +9,8 @@ import {
   initializeAppCheck,
   ReCaptchaEnterpriseProvider,
 } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app-check.js";
+import {sendOTPZalo, verifyOTPZalo } from "./zaloAuthService.js";
+import {clearPhoneFromSession, savePhoneToSession} from './sessionStorage.js';
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -75,58 +77,39 @@ async function verifyOTP() {
   // console.log(otp);
 
   try {
-    const result = await window.confirmationResult.confirm(otp);
-    console.log(result._tokenResponse.idToken);
+    const result = await verifyOTPZalo(otp);
     if (result) {
-      const payload = { token: result._tokenResponse.idToken };
-      const requestOptions = {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      };
       body.style.height = "100vh";
       loading.style.display = "flex";
       try {
-        const oauth = await fetch(
-          "https://priority-api.jemmia.vn/auth/oauth",
-          requestOptions
-        )
-          .then((resp) => {
-            resp.json().then((items) => {
-              console.log(items);
-              if (
-                !items.accessToken &&
-                items.status !== 200 &&
-                items.status !== 201
-              ) {
-                console.log(items);
-                toast.classList.remove("d-none");
-                loading.style.display = "none";
-                const titleToast = (document.getElementById(
-                  "titleToast"
-                ).innerText =
-                  "Đăng nhập không thành công. Vui lòng liên hệ bộ phận hỗ trợ");
-                veri.disabled = false;
-                veri.style.opacity = 1;
-              } else {
-                localStorage.setItem(
-                  "accessToken",
-                  JSON.stringify(items.accessToken)
-                );
-                localStorage.setItem("user", JSON.stringify(items.user));
+        const items = result;
+        if (
+          !items.accessToken &&
+          items.status !== 200 &&
+          items.status !== 201
+        ) {
+          console.log(items);
+          toast.classList.remove("d-none");
+          loading.style.display = "none";
+          const titleToast = (document.getElementById(
+            "titleToast"
+          ).innerText =
+            "Đăng nhập không thành công. Vui lòng liên hệ bộ phận hỗ trợ");
+          veri.disabled = false;
+          veri.style.opacity = 1;
+        } else {
+          localStorage.setItem(
+            "accessToken",
+            JSON.stringify(items.accessToken)
+          );
+          localStorage.setItem("user", JSON.stringify(items.user));
 
-                window.location.assign("/");
-                loading.style.display = "none";
-                window.history.replaceState(null, null, window.location.href);
-              }
-            });
-            //
-          })
-          .catch(() => {
-            loading.style.display = "none";
-          });
+          window.location.assign("/");
+          loading.style.display = "none";
+          window.history.replaceState(null, null, window.location.href);
+        }
+        loading.style.display = "none";
+        clearPhoneFromSession();
       } catch {
         veri.disabled = false;
         veri.style.opacity = 1;
@@ -136,6 +119,7 @@ async function verifyOTP() {
       veri.style.opacity = 1;
     }
   } catch (err) {
+    console.error(err);
     // toast.innerText = 'Mã otp không hợp lệ'
     toast.classList.remove("d-none");
     loading.style.display = "none";
@@ -144,18 +128,6 @@ async function verifyOTP() {
   }
   // window.location.assign("home.html");
 }
-
-//
-window.recaptchaVerifier = new RecaptchaVerifier(auth, "recapcha", {
-  size: "invisible",
-
-  callback: function (respone) {
-    console.log(respone);
-  },
-  "expired-callback": function () {
-    // Xử lý khi reCAPTCHA hết hạn
-  },
-});
 
 const Polify = document.getElementById("policy");
 //
@@ -177,7 +149,6 @@ Polify.addEventListener("change", (e) => {
   }
 });
 
-window.recaptchaVerifier.render();
 async function sendOTP() {
   send.disabled = true;
   send.style.opacity = 0.2;
@@ -218,12 +189,11 @@ async function sendOTP() {
   try {
     // var confirmationResult
     if (verify) {
-      console.log(window.recaptchaVerifier);
-      window.confirmationResult = await signInWithPhoneNumber(
-        auth,
+      sendOTPZalo(
         verify,
-        window.recaptchaVerifier
       );
+
+      savePhoneToSession(verify);
 
       let login = (document.getElementById("login").style.display = "none");
       let verify_otp = (document.getElementById("verify_otp").style.display =
