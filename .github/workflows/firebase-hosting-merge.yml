@@ -18,5 +18,5 @@ jobs:
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_JEMMIA_PRIORITY_DEV }}'
-          channelId: preview
+          channelId: live
           projectId: jemmia-priority-dev
