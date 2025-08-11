@@ -63,6 +63,13 @@ if (author) {
   window.location.assign("/");
 }
 
+function stopVerifying() {
+  toast.classList.remove("d-none");
+  loading.style.display = "none";
+  veri.disabled = false;
+  veri.style.opacity = 1;
+}
+
 async function verifyOTP() {
   veri.disabled = true;
   veri.style.opacity = 0.2;
@@ -76,6 +83,24 @@ async function verifyOTP() {
 
   // console.log(otp);
 
+  if (!otp) {
+    stopVerifying();
+    document.getElementById(
+      "titleToast"
+    ).innerText =
+      "Vui lòng nhập mã OTP";
+    return;
+  }
+
+  if (otp.length !== 6) {
+    stopVerifying();
+    document.getElementById(
+      "titleToast"
+    ).innerText =
+      "Vui lòng nhập đủ 6 số cho mã OTP";
+    return;
+  }
+  
   try {
     const result = await verifyOTPZalo(otp);
     if (result) {
@@ -91,10 +116,10 @@ async function verifyOTP() {
           console.log(items);
           toast.classList.remove("d-none");
           loading.style.display = "none";
-          const titleToast = (document.getElementById(
+          document.getElementById(
             "titleToast"
           ).innerText =
-            "Đăng nhập không thành công. Vui lòng liên hệ bộ phận hỗ trợ");
+            "Đăng nhập không thành công. Vui lòng liên hệ bộ phận hỗ trợ";
           veri.disabled = false;
           veri.style.opacity = 1;
         } else {
@@ -120,11 +145,11 @@ async function verifyOTP() {
     }
   } catch (err) {
     console.error(err);
-    // toast.innerText = 'Mã otp không hợp lệ'
-    toast.classList.remove("d-none");
-    loading.style.display = "none";
-    veri.disabled = false;
-    veri.style.opacity = 1;
+    stopVerifying();
+    document.getElementById(
+      "titleToast"
+    ).innerText =
+      "Đăng nhập không thành công. Vui lòng liên hệ bộ phận hỗ trợ";
   }
   // window.location.assign("home.html");
 }
